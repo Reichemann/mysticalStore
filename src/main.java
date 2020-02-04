@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import Stores.armorStore;
 import Stores.magicStore;
 import Stores.weaponStore;
+import Stores.alchemyStore;
 
 public class main {
 
     static armorStore someArmorStore = new armorStore();
     static magicStore someMagicStore = new magicStore();
-    static weaponStore someWeaponShop = new weaponStore();
+    static weaponStore someWeaponStore = new weaponStore();
+    static alchemyStore someAlchemyStore = new alchemyStore();
     static List <Integer> priceList = new ArrayList<>();
     static int totalPurchasePrice = 0;
     static boolean play = true;
@@ -29,8 +31,9 @@ public class main {
         System.out.println("1. Armor Store.");
         System.out.println("2. Magic Store.");
         System.out.println("3. Weapon Store.");
-        System.out.println("4. Show total purchase price.");
-        System.out.println("5. Exit.");
+        System.out.println("4. Alchemy Store.");
+        System.out.println("5. Show total purchase price.");
+        System.out.println("6. Exit.");
 
         int userMainChoice = in.nextInt();
 
@@ -45,9 +48,12 @@ public class main {
                 weaponStoreData();
                 break;
             case 4:
-                showTotalPurchasePrice(getTotalPurchasePrice(totalPurchasePrice));
+                alchemyStoreData();
                 break;
             case 5:
+                showTotalPurchasePrice(getTotalPurchasePrice(totalPurchasePrice));
+                break;
+            case 6:
                 programEnd(play);
                 break;
             default:
@@ -118,15 +124,41 @@ public class main {
         switch(weaponStoreChoice) {
             case 1:
                 purchaseMessage();
-                priceList.add(someWeaponShop.getCrossbowPrice());
+                priceList.add(someWeaponStore.getCrossbowPrice());
                 break;
             case 2:
                 purchaseMessage();
-                priceList.add(someWeaponShop.getSwordPrice());
+                priceList.add(someWeaponStore.getSwordPrice());
                 break;
             case 3:
                 purchaseMessage();
-                priceList.add(someWeaponShop.getAxePrice());
+                priceList.add(someWeaponStore.getAxePrice());
+                break;
+            default:
+                errorMessage();
+                break;
+        }
+    }
+
+    public static void alchemyStoreData() {
+        System.out.println("1. Health potion.");
+        System.out.println("2. Mana potion.");
+        System.out.println("3. Power potion.");
+
+        int alchemyStoreChoice = in.nextInt();
+
+        switch(alchemyStoreChoice) {
+            case 1:
+                purchaseMessage();
+                priceList.add(someAlchemyStore.getHealthPotion());
+                break;
+            case 2:
+                purchaseMessage();
+                priceList.add(someAlchemyStore.getManaPotion());
+                break;
+            case 3:
+                purchaseMessage();
+                priceList.add(someAlchemyStore.getPowerPotion());
                 break;
             default:
                 errorMessage();
