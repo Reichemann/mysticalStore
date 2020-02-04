@@ -1,20 +1,24 @@
 package Stores;
 
-public class weaponStore {
+import java.util.List;
+import java.util.ArrayList;
+import Items.Item;
 
-    private int crossbowPrice = 105;
-    private int swordPrice = 75;
-    private int axePrice = 80;
+public class weaponStore extends Store {
 
-    public int getCrossbowPrice() {
-        return this.crossbowPrice;
+    private List <Item> storeList = new ArrayList();
+
+    public weaponStore(List <Item> storeList) {
+        super(storeList);
     }
 
-    public int getSwordPrice() {
-        return this.swordPrice;
+    @Override
+    public List<Item> getStoreList() {
+        return this.storeList;
     }
 
-    public int getAxePrice() {
-        return this.axePrice;
+    @Override
+    public void setStoreList(List<Item> storeList) {
+        this.storeList = storeList;
     }
 }

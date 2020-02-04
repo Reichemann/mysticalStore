@@ -1,20 +1,24 @@
 package Stores;
 
-public class armorStore {
+import java.util.ArrayList;
+import java.util.List;
+import Items.Item;
 
-    private int helmetPrice = 45;
-    private int armorPrice = 95;
-    private int leggingsPrice = 35;
+public class armorStore extends Store {
 
-    public int getHelmetPrice() {
-        return this.helmetPrice;
+    private List <Item> storeList = new ArrayList();
+
+    public armorStore(List <Item> storeList) {
+        super(storeList);
     }
 
-    public int getArmorPrice() {
-        return this.armorPrice;
+    @Override
+    public List<Item> getStoreList() {
+        return this.storeList;
     }
 
-    public int getLeggingsPrice() {
-        return this.leggingsPrice;
+    @Override
+    public void setStoreList(List<Item> storeList) {
+        this.storeList = storeList;
     }
 }

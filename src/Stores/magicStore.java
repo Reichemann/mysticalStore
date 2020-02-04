@@ -1,20 +1,24 @@
 package Stores;
 
-public class magicStore{
+import java.util.ArrayList;
+import java.util.List;
+import Items.Item;
 
-    private int magicStaffPrice = 120;
-    private int magicAmuletPrice = 55;
-    private int magicPowderPrice = 10;
+public class magicStore extends Store {
 
-    public int getMagicStaffPrice() {
-        return this.magicStaffPrice;
+    private List <Item> storeList = new ArrayList();
+
+    public magicStore(List <Item> storeList) {
+        super(storeList);
     }
 
-    public int getMagicAmuletPrice() {
-        return this.magicAmuletPrice;
+    @Override
+    public List<Item> getStoreList() {
+        return this.storeList;
     }
 
-    public int getMagicPowderPrice() {
-        return this.magicPowderPrice;
+    @Override
+    public void setStoreList(List<Item> storeList) {
+        this.storeList = storeList;
     }
 }
