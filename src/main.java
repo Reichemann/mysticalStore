@@ -2,47 +2,17 @@ import java.util.Scanner;
 import java.util.List;
 import java.util.ArrayList;
 
-import Items.Item;
 import Stores.armorStore;
 import Stores.magicStore;
 import Stores.weaponStore;
 import Stores.alchemyStore;
-import Items.armorStore.Armor;
-import Items.armorStore.Helmet;
-import Items.armorStore.Leggings;
-import Items.magicStore.Staff;
-import Items.magicStore.Amulet;
-import Items.magicStore.Powder;
-import Items.weaponStore.Crossbow;
-import Items.weaponStore.Sword;
-import Items.weaponStore.Axe;
-import Items.alchemyStore.healthPotion;
-import Items.alchemyStore.manaPotion;
-import Items.alchemyStore.powerPotion;
 
 public class main {
 
-    static armorStore someArmorStore;
-    static magicStore someMagicStore;
-    static weaponStore someWeaponStore;
-    static alchemyStore someAlchemyStore;
-
-    static Helmet someHelmet = new Helmet();
-    static Armor someArmor = new Armor();
-    static Leggings someLeggings = new Leggings();
-    static Staff someStaff = new Staff();
-    static Amulet someAmulet = new Amulet();
-    static Powder somePowder = new Powder();
-    static Crossbow someCrossbow = new Crossbow();
-    static Sword someSword = new Sword();
-    static Axe someAxe = new Axe();
-    static healthPotion someHealthPotion = new healthPotion();
-    static manaPotion someManaPotion = new manaPotion();
-    static powerPotion somePowerPotion = new powerPotion();
-    static List <Item> armorStoreList = new ArrayList<>();
-    static List <Item> magicStoreList = new ArrayList<>();
-    static List <Item> weaponStoreList = new ArrayList<>();
-    static List <Item> alchemyStoreList = new ArrayList<>();
+    static armorStore someArmorStore = new armorStore();
+    static magicStore someMagicStore = new magicStore();
+    static weaponStore someWeaponStore = new weaponStore();
+    static alchemyStore someAlchemyStore = new alchemyStore();
 
     static List <Integer> priceList = new ArrayList<>();
     static int totalPurchasePrice = 0;
@@ -52,24 +22,9 @@ public class main {
 
     public static void main(String[] args) {
 
-        addHelmetToArmorStore(armorStoreList, someHelmet);
-        addArmorToArmorStore(armorStoreList, someArmor);
-        addLeggingsToArmorStore(armorStoreList, someLeggings);
-        addStaffToMagicStore(magicStoreList, someStaff);
-        addAmuletToMagicStore(magicStoreList, someAmulet);
-        addPowderToMagicStore(magicStoreList, somePowder);
-        addCrossbowToWeaponStore(weaponStoreList, someCrossbow);
-        addAxeToWeaponStore(weaponStoreList, someAxe);
-        addHealthPotionToAlchemyStore(alchemyStoreList, someHealthPotion);
-        addManaPotionToAlchemyStore(alchemyStoreList, someManaPotion);
-        addPowerPotionToAlchemyStore(alchemyStoreList, somePowerPotion);
+        addItemsToStore(someArmorStore, someMagicStore, someWeaponStore, someAlchemyStore);
 
-        someArmorStore = new armorStore(armorStoreList);
-        someMagicStore = new magicStore(magicStoreList);
-        someWeaponStore = new weaponStore(weaponStoreList);
-        someAlchemyStore = new alchemyStore(alchemyStoreList);
-
-        System.out.println("Welcome to the great shopping! Choose a store: ");
+        System.out.println("Welcome to the great shopping! Choose an option: ");
 
         while(play) {
             printMainData();
@@ -121,35 +76,20 @@ public class main {
         switch(armorStoreChoice) {
             case 1:
                 purchaseMessage();
-                addPurchaseToPriceList(someHelmet.getPrice(), priceList);
+                addPurchaseToPriceList(someArmorStore.getHelmetPrice(), priceList);
                 break;
             case 2:
                 purchaseMessage();
-                addPurchaseToPriceList(someArmor.getPrice(), priceList);
+                addPurchaseToPriceList(someArmorStore.getArmorPrice(), priceList);
                 break;
             case 3:
                 purchaseMessage();
-                addPurchaseToPriceList(someLeggings.getPrice(), priceList);
+                addPurchaseToPriceList(someArmorStore.getLeggingsPrice(), priceList);
                 break;
             default:
                 errorMessage();
                 break;
         }
-    }
-
-    public static void addHelmetToArmorStore(List <Item> armorStoreList, Helmet helmet) {
-        helmet = new Helmet();
-        armorStoreList.add(helmet);
-    }
-
-    public static void addArmorToArmorStore(List <Item> armorStoreList, Armor armor) {
-        armor = new Armor();
-        armorStoreList.add(armor);
-    }
-
-    public static void addLeggingsToArmorStore(List <Item> armorStoreList, Leggings leggings) {
-        leggings = new Leggings();
-        armorStoreList.add(leggings);
     }
 
     public static void magicStoreData() {
@@ -162,35 +102,20 @@ public class main {
         switch(magicStoreChoice) {
             case 1:
                 purchaseMessage();
-                addPurchaseToPriceList(someStaff.getPrice(), priceList);
+                addPurchaseToPriceList(someMagicStore.getStaffPrice(), priceList);
                 break;
             case 2:
                 purchaseMessage();
-                addPurchaseToPriceList(someAmulet.getPrice(), priceList);
+                addPurchaseToPriceList(someMagicStore.getAmuletPrice(), priceList);
                 break;
             case 3:
                 purchaseMessage();
-                addPurchaseToPriceList(somePowder.getPrice(), priceList);
+                addPurchaseToPriceList(someMagicStore.getPowderPrice(), priceList);
                 break;
             default:
                 errorMessage();
                 break;
         }
-    }
-
-    public static void addStaffToMagicStore(List <Item> magicStoreList, Staff staff) {
-        staff = new Staff();
-        magicStoreList.add(staff);
-    }
-
-    public static void addAmuletToMagicStore(List <Item> magicStoreList, Amulet amulet) {
-        amulet = new Amulet();
-        magicStoreList.add(amulet);
-    }
-
-    public static void addPowderToMagicStore(List <Item> magicStoreList, Powder powder) {
-        powder = new Powder();
-        magicStoreList.add(powder);
     }
 
     public static void weaponStoreData() {
@@ -203,35 +128,20 @@ public class main {
         switch(weaponStoreChoice) {
             case 1:
                 purchaseMessage();
-                addPurchaseToPriceList(someCrossbow.getPrice(), priceList);
+                addPurchaseToPriceList(someWeaponStore.getCrossbowPrice(), priceList);
                 break;
             case 2:
                 purchaseMessage();
-                addPurchaseToPriceList(someSword.getPrice(), priceList);
+                addPurchaseToPriceList(someWeaponStore.getSwordPrice(), priceList);
                 break;
             case 3:
                 purchaseMessage();
-                addPurchaseToPriceList(someAxe.getPrice(), priceList);
+                addPurchaseToPriceList(someWeaponStore.getAxePrice(), priceList);
                 break;
             default:
                 errorMessage();
                 break;
         }
-    }
-
-    public static void addCrossbowToWeaponStore(List <Item> weaponStoreList, Crossbow crossbow) {
-        crossbow = new Crossbow();
-        weaponStoreList.add(crossbow);
-    }
-
-    public static void addSwordToWeaponStore(List <Item> weaponStoreList, Sword sword) {
-        sword = new Sword();
-        weaponStoreList.add(sword);
-    }
-
-    public static void addAxeToWeaponStore(List <Item> weaponStoreList, Axe axe) {
-        axe = new Axe();
-        weaponStoreList.add(axe);
     }
 
     public static void alchemyStoreData() {
@@ -244,15 +154,15 @@ public class main {
         switch(alchemyStoreChoice) {
             case 1:
                 purchaseMessage();
-                addPurchaseToPriceList(someHealthPotion.getPrice(), priceList);
+                addPurchaseToPriceList(someAlchemyStore.getHealthPotionPrice(), priceList);
                 break;
             case 2:
                 purchaseMessage();
-                addPurchaseToPriceList(someManaPotion.getPrice(), priceList);
+                addPurchaseToPriceList(someAlchemyStore.getManaPotionPrice(), priceList);
                 break;
             case 3:
                 purchaseMessage();
-                addPurchaseToPriceList(somePowerPotion.getPrice(), priceList);
+                addPurchaseToPriceList(someAlchemyStore.getPowerPotionPrice(), priceList);
                 break;
             default:
                 errorMessage();
@@ -260,19 +170,19 @@ public class main {
         }
     }
 
-    public static void addHealthPotionToAlchemyStore(List <Item> alchemyStoreList, healthPotion healthpotion) {
-        healthpotion = new healthPotion();
-        alchemyStoreList.add(healthpotion);
-    }
-
-    public static void addManaPotionToAlchemyStore(List <Item> alchemyStoreList, manaPotion manapotion) {
-        manapotion = new manaPotion();
-        alchemyStoreList.add(manapotion);
-    }
-
-    public static void addPowerPotionToAlchemyStore(List <Item> alchemyStoreList, powerPotion powerpotion) {
-        powerpotion = new powerPotion();
-        alchemyStoreList.add(powerpotion);
+    public static void addItemsToStore(armorStore ArmorStore, magicStore MagicStore, weaponStore WeaponStore, alchemyStore AlchemyStore) {
+        ArmorStore.addFirstItemToStore();
+        ArmorStore.addSecondItemToStore();
+        ArmorStore.addThirdItemToStore();
+        MagicStore.addFirstItemToStore();
+        MagicStore.addSecondItemToStore();
+        MagicStore.addThirdItemToStore();
+        WeaponStore.addFirstItemToStore();
+        WeaponStore.addSecondItemToStore();
+        WeaponStore.addThirdItemToStore();
+        AlchemyStore.addFirstItemToStore();
+        AlchemyStore.addSecondItemToStore();
+        AlchemyStore.addThirdItemToStore();
     }
 
     public static void addPurchaseToPriceList(int price, List <Integer> priceList) {
@@ -297,7 +207,6 @@ public class main {
 
     public static boolean programEnd() {
         System.out.println("Good luck!");
-
         return false;
     }
 

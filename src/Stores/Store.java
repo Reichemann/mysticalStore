@@ -8,15 +8,11 @@ public abstract class Store {
 
     private List <Item> storeList = new ArrayList();
 
-    public Store(List <Item> storeList) {
-        this.storeList = storeList;
+    public List<Item> getStoreList() {
+        return storeList;
     }
 
-    public List <Item> getStoreList() {
-        return this.storeList;
-    }
-
-    public void setStoreList(List <Item> storeList) {
+    public void setStoreList(List<Item> storeList) {
         this.storeList = storeList;
     }
 }
