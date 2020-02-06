@@ -2,7 +2,7 @@ package Items.alchemyStore;
 
 import Items.Item;
 
-public class powerPotion extends Item {
+public class PowerPotion extends Item {
 
     private int price = 35;
     private String name = "Power Potion";

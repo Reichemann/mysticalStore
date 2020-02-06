@@ -2,10 +2,10 @@ package Items.alchemyStore;
 
 import Items.Item;
 
-public class manaPotion extends Item {
+public class HealthPotion extends Item {
 
     private int price = 25;
-    private String name = "Mana Potion";
+    private String name = "Health Potion";
 
     @Override
     public int getPrice() {

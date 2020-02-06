@@ -8,7 +8,7 @@ import Items.armorStore.Armor;
 import Items.armorStore.Leggings;
 
 
-public class armorStore extends Store {
+public class ArmorStore extends Store {
 
     private Helmet someHelmet;
     private Armor someArmor;
@@ -28,18 +28,12 @@ public class armorStore extends Store {
         return someLeggings.getPrice();
     }
 
-    public void addFirstItemToStore() {
+    public void addItemsToStore() {
         someHelmet = new Helmet();
-        storeList.add(someHelmet);
-    }
-
-    public void addSecondItemToStore() {
         someArmor = new Armor();
-        storeList.add(someArmor);
-    }
-
-    public void addThirdItemToStore() {
         someLeggings = new Leggings();
+        storeList.add(someHelmet);
+        storeList.add(someArmor);
         storeList.add(someLeggings);
     }
 

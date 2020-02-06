@@ -2,17 +2,17 @@ import java.util.Scanner;
 import java.util.List;
 import java.util.ArrayList;
 
-import Stores.armorStore;
-import Stores.magicStore;
-import Stores.weaponStore;
-import Stores.alchemyStore;
+import Stores.ArmorStore;
+import Stores.MagicStore;
+import Stores.WeaponStore;
+import Stores.AlchemyStore;
 
 public class main {
 
-    static armorStore someArmorStore = new armorStore();
-    static magicStore someMagicStore = new magicStore();
-    static weaponStore someWeaponStore = new weaponStore();
-    static alchemyStore someAlchemyStore = new alchemyStore();
+    static ArmorStore someArmorStore = new ArmorStore();
+    static MagicStore someMagicStore = new MagicStore();
+    static WeaponStore someWeaponStore = new WeaponStore();
+    static AlchemyStore someAlchemyStore = new AlchemyStore();
 
     static List <Integer> priceList = new ArrayList<>();
     static int totalPurchasePrice = 0;
@@ -170,19 +170,11 @@ public class main {
         }
     }
 
-    public static void addItemsToStore(armorStore ArmorStore, magicStore MagicStore, weaponStore WeaponStore, alchemyStore AlchemyStore) {
-        ArmorStore.addFirstItemToStore();
-        ArmorStore.addSecondItemToStore();
-        ArmorStore.addThirdItemToStore();
-        MagicStore.addFirstItemToStore();
-        MagicStore.addSecondItemToStore();
-        MagicStore.addThirdItemToStore();
-        WeaponStore.addFirstItemToStore();
-        WeaponStore.addSecondItemToStore();
-        WeaponStore.addThirdItemToStore();
-        AlchemyStore.addFirstItemToStore();
-        AlchemyStore.addSecondItemToStore();
-        AlchemyStore.addThirdItemToStore();
+    public static void addItemsToStore(ArmorStore armorStore, MagicStore magicStore, WeaponStore weaponStore, AlchemyStore alchemyStore) {
+        armorStore.addItemsToStore();
+        magicStore.addItemsToStore();
+        weaponStore.addItemsToStore();
+        alchemyStore.addItemsToStore();
     }
 
     public static void addPurchaseToPriceList(int price, List <Integer> priceList) {

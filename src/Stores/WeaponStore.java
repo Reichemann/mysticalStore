@@ -3,11 +3,14 @@ package Stores;
 import java.util.List;
 import java.util.ArrayList;
 import Items.Item;
+import Items.armorStore.Armor;
+import Items.armorStore.Helmet;
+import Items.armorStore.Leggings;
 import Items.weaponStore.Crossbow;
 import Items.weaponStore.Sword;
 import Items.weaponStore.Axe;
 
-public class weaponStore extends Store {
+public class WeaponStore extends Store {
 
     private Crossbow someCrossbow;
     private Sword someSword;
@@ -27,18 +30,12 @@ public class weaponStore extends Store {
         return someAxe.getPrice();
     }
 
-    public void addFirstItemToStore() {
+    public void addItemsToStore() {
         someCrossbow = new Crossbow();
-        storeList.add(someCrossbow);
-    }
-
-    public void addSecondItemToStore() {
         someSword = new Sword();
-        storeList.add(someSword);
-    }
-
-    public void addThirdItemToStore() {
         someAxe = new Axe();
+        storeList.add(someCrossbow);
+        storeList.add(someSword);
         storeList.add(someAxe);
     }
 

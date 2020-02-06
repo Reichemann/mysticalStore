@@ -3,15 +3,15 @@ package Stores;
 import java.util.List;
 import java.util.ArrayList;
 import Items.Item;
-import Items.alchemyStore.healthPotion;
-import Items.alchemyStore.manaPotion;
-import Items.alchemyStore.powerPotion;
+import Items.alchemyStore.HealthPotion;
+import Items.alchemyStore.ManaPotion;
+import Items.alchemyStore.PowerPotion;
 
-public class alchemyStore extends Store {
+public class AlchemyStore extends Store {
 
-    private healthPotion someHealthPotion;
-    private manaPotion someManaPotion;
-    private powerPotion somePowerPotion;
+    private HealthPotion someHealthPotion;
+    private ManaPotion someManaPotion;
+    private PowerPotion somePowerPotion;
 
     private List <Item> storeList = new ArrayList();
 
@@ -27,18 +27,12 @@ public class alchemyStore extends Store {
         return somePowerPotion.getPrice();
     }
 
-    public void addFirstItemToStore() {
-        someHealthPotion = new healthPotion();
+    public void addItemsToStore() {
+        someHealthPotion = new HealthPotion();
+        someManaPotion = new ManaPotion();
+        somePowerPotion = new PowerPotion();
         storeList.add(someHealthPotion);
-    }
-
-    public void addSecondItemToStore() {
-        someManaPotion = new manaPotion();
         storeList.add(someManaPotion);
-    }
-
-    public void addThirdItemToStore() {
-        somePowerPotion = new powerPotion();
         storeList.add(somePowerPotion);
     }
 

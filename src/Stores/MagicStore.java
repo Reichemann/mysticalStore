@@ -3,11 +3,14 @@ package Stores;
 import java.util.List;
 import java.util.ArrayList;
 import Items.Item;
+import Items.armorStore.Armor;
+import Items.armorStore.Helmet;
+import Items.armorStore.Leggings;
 import Items.magicStore.Staff;
 import Items.magicStore.Amulet;
 import Items.magicStore.Powder;
 
-public class magicStore extends Store {
+public class MagicStore extends Store {
 
     private Staff someStaff;
     private Amulet someAmulet;
@@ -27,18 +30,12 @@ public class magicStore extends Store {
         return somePowder.getPrice();
     }
 
-    public void addFirstItemToStore() {
+    public void addItemsToStore() {
         someStaff = new Staff();
-        storeList.add(someStaff);
-    }
-
-    public void addSecondItemToStore() {
         someAmulet = new Amulet();
-        storeList.add(someAmulet);
-    }
-
-    public void addThirdItemToStore() {
         somePowder = new Powder();
+        storeList.add(someStaff);
+        storeList.add(someAmulet);
         storeList.add(somePowder);
     }
 
