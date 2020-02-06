@@ -74,15 +74,15 @@ public class Main {
         switch(armorStoreChoice) {
             case 1:
                 purchaseMessage();
-                addPurchaseToPriceList(someArmorStore.getHelmetPrice(), priceList);
+                addPurchaseToPriceList(someArmorStore.getHelmetPrice());
                 break;
             case 2:
                 purchaseMessage();
-                addPurchaseToPriceList(someArmorStore.getArmorPrice(), priceList);
+                addPurchaseToPriceList(someArmorStore.getArmorPrice());
                 break;
             case 3:
                 purchaseMessage();
-                addPurchaseToPriceList(someArmorStore.getLeggingsPrice(), priceList);
+                addPurchaseToPriceList(someArmorStore.getLeggingsPrice());
                 break;
             default:
                 errorMessage();
@@ -100,15 +100,15 @@ public class Main {
         switch(magicStoreChoice) {
             case 1:
                 purchaseMessage();
-                addPurchaseToPriceList(someMagicStore.getStaffPrice(), priceList);
+                addPurchaseToPriceList(someMagicStore.getStaffPrice());
                 break;
             case 2:
                 purchaseMessage();
-                addPurchaseToPriceList(someMagicStore.getAmuletPrice(), priceList);
+                addPurchaseToPriceList(someMagicStore.getAmuletPrice());
                 break;
             case 3:
                 purchaseMessage();
-                addPurchaseToPriceList(someMagicStore.getPowderPrice(), priceList);
+                addPurchaseToPriceList(someMagicStore.getPowderPrice());
                 break;
             default:
                 errorMessage();
@@ -126,15 +126,15 @@ public class Main {
         switch(weaponStoreChoice) {
             case 1:
                 purchaseMessage();
-                addPurchaseToPriceList(someWeaponStore.getCrossbowPrice(), priceList);
+                addPurchaseToPriceList(someWeaponStore.getCrossbowPrice());
                 break;
             case 2:
                 purchaseMessage();
-                addPurchaseToPriceList(someWeaponStore.getSwordPrice(), priceList);
+                addPurchaseToPriceList(someWeaponStore.getSwordPrice());
                 break;
             case 3:
                 purchaseMessage();
-                addPurchaseToPriceList(someWeaponStore.getAxePrice(), priceList);
+                addPurchaseToPriceList(someWeaponStore.getAxePrice());
                 break;
             default:
                 errorMessage();
@@ -152,15 +152,15 @@ public class Main {
         switch(alchemyStoreChoice) {
             case 1:
                 purchaseMessage();
-                addPurchaseToPriceList(someAlchemyStore.getHealthPotionPrice(), priceList);
+                addPurchaseToPriceList(someAlchemyStore.getHealthPotionPrice());
                 break;
             case 2:
                 purchaseMessage();
-                addPurchaseToPriceList(someAlchemyStore.getManaPotionPrice(), priceList);
+                addPurchaseToPriceList(someAlchemyStore.getManaPotionPrice());
                 break;
             case 3:
                 purchaseMessage();
-                addPurchaseToPriceList(someAlchemyStore.getPowerPotionPrice(), priceList);
+                addPurchaseToPriceList(someAlchemyStore.getPowerPotionPrice());
                 break;
             default:
                 errorMessage();
@@ -168,7 +168,7 @@ public class Main {
         }
     }
 
-    public static void addPurchaseToPriceList(int price, List <Integer> priceList) {
+    public static void addPurchaseToPriceList(int price) {
         priceList.add(price);
     }
 

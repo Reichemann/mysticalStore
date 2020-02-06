@@ -38,7 +38,7 @@ public class WeaponStore extends Store {
     }
 
     @Override
-    public List<Item> setListData() {
+    public List<Item> setStoreListData() {
         return this.storeList;
     }
 }
