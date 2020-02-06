@@ -37,16 +37,6 @@ public class ArmorStore extends Store {
         return someLeggings.getPrice();
     }
 
-    public void addItemsToStore() {
-        someHelmet = new Helmet();
-        someArmor = new Armor();
-        someLeggings = new Leggings();
-
-        storeList.add(someHelmet);
-        storeList.add(someArmor);
-        storeList.add(someLeggings);
-    }
-
     @Override
     public List<Item> getStoreList() {
         return storeList;
