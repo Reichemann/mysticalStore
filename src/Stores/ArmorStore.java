@@ -7,7 +7,6 @@ import Items.armorStore.Helmet;
 import Items.armorStore.Armor;
 import Items.armorStore.Leggings;
 
-
 public class ArmorStore extends Store {
 
     private Helmet someHelmet;
@@ -15,6 +14,16 @@ public class ArmorStore extends Store {
     private Leggings someLeggings;
 
     private List<Item> storeList = new ArrayList();
+
+    public ArmorStore() {
+        someHelmet = new Helmet();
+        someArmor = new Armor();
+        someLeggings = new Leggings();
+
+        storeList.add(someHelmet);
+        storeList.add(someArmor);
+        storeList.add(someLeggings);
+    }
 
     public int getHelmetPrice() {
         return someHelmet.getPrice();
@@ -32,6 +41,7 @@ public class ArmorStore extends Store {
         someHelmet = new Helmet();
         someArmor = new Armor();
         someLeggings = new Leggings();
+
         storeList.add(someHelmet);
         storeList.add(someArmor);
         storeList.add(someLeggings);

@@ -7,7 +7,7 @@ import Stores.MagicStore;
 import Stores.WeaponStore;
 import Stores.AlchemyStore;
 
-public class main {
+public class Main {
 
     static ArmorStore someArmorStore = new ArmorStore();
     static MagicStore someMagicStore = new MagicStore();
@@ -21,8 +21,6 @@ public class main {
     static Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) {
-
-        addItemsToStore(someArmorStore, someMagicStore, someWeaponStore, someAlchemyStore);
 
         System.out.println("Welcome to the great shopping! Choose an option: ");
 
@@ -168,13 +166,6 @@ public class main {
                 errorMessage();
                 break;
         }
-    }
-
-    public static void addItemsToStore(ArmorStore armorStore, MagicStore magicStore, WeaponStore weaponStore, AlchemyStore alchemyStore) {
-        armorStore.addItemsToStore();
-        magicStore.addItemsToStore();
-        weaponStore.addItemsToStore();
-        alchemyStore.addItemsToStore();
     }
 
     public static void addPurchaseToPriceList(int price, List <Integer> priceList) {

@@ -15,6 +15,16 @@ public class AlchemyStore extends Store {
 
     private List <Item> storeList = new ArrayList();
 
+    public AlchemyStore() {
+        someHealthPotion = new HealthPotion();
+        someManaPotion = new ManaPotion();
+        somePowerPotion = new PowerPotion();
+
+        storeList.add(someHealthPotion);
+        storeList.add(someManaPotion);
+        storeList.add(somePowerPotion);
+    }
+
     public int getHealthPotionPrice() {
         return someHealthPotion.getPrice();
     }
@@ -25,15 +35,6 @@ public class AlchemyStore extends Store {
 
     public int getPowerPotionPrice() {
         return somePowerPotion.getPrice();
-    }
-
-    public void addItemsToStore() {
-        someHealthPotion = new HealthPotion();
-        someManaPotion = new ManaPotion();
-        somePowerPotion = new PowerPotion();
-        storeList.add(someHealthPotion);
-        storeList.add(someManaPotion);
-        storeList.add(somePowerPotion);
     }
 
     @Override
