@@ -38,12 +38,7 @@ public class ArmorStore extends Store {
     }
 
     @Override
-    public List<Item> getStoreList() {
-        return storeList;
-    }
-
-    @Override
-    public void setStoreList(List<Item> storeList) {
-        this.storeList = storeList;
+    public List<Item> setListData() {
+        return this.storeList;
     }
 }

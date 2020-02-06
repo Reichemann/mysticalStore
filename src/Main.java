@@ -198,6 +198,6 @@ public class Main {
     }
 
     public static void errorMessage() {
-        System.out.println("Incorrect input! Please, restart the program.");
+        System.out.println("Incorrect input!");
     }
 }

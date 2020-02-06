@@ -13,6 +13,8 @@ public class WeaponStore extends Store {
     private Sword someSword;
     private Axe someAxe;
 
+    private List <Item> storeList = new ArrayList();
+
     public WeaponStore() {
         someCrossbow = new Crossbow();
         someSword = new Sword();
@@ -22,8 +24,6 @@ public class WeaponStore extends Store {
         storeList.add(someSword);
         storeList.add(someAxe);
     }
-
-    private List <Item> storeList = new ArrayList();
 
     public int getCrossbowPrice() {
         return someCrossbow.getPrice();
@@ -38,12 +38,7 @@ public class WeaponStore extends Store {
     }
 
     @Override
-    public List<Item> getStoreList() {
-        return storeList;
-    }
-
-    @Override
-    public void setStoreList(List<Item> storeList) {
-        this.storeList = storeList;
+    public List<Item> setListData() {
+        return this.storeList;
     }
 }

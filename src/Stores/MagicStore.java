@@ -13,6 +13,8 @@ public class MagicStore extends Store {
     private Amulet someAmulet;
     private Powder somePowder;
 
+    private List <Item> storeList = new ArrayList();
+
     public MagicStore() {
         someStaff = new Staff();
         someAmulet = new Amulet();
@@ -22,8 +24,6 @@ public class MagicStore extends Store {
         storeList.add(someAmulet);
         storeList.add(somePowder);
     }
-
-    private List <Item> storeList = new ArrayList();
 
     public int getStaffPrice() {
         return someStaff.getPrice();
@@ -38,12 +38,7 @@ public class MagicStore extends Store {
     }
 
     @Override
-    public List<Item> getStoreList() {
-        return storeList;
-    }
-
-    @Override
-    public void setStoreList(List<Item> storeList) {
-        this.storeList = storeList;
+    public List<Item> setListData() {
+        return this.storeList;
     }
 }
