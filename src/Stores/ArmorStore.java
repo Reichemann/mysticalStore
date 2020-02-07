@@ -25,20 +25,38 @@ public class ArmorStore extends Store {
         storeList.add(someLeggings);
     }
 
-    public int getHelmetPrice() {
-        return someHelmet.getPrice();
-    }
-
-    public int getArmorPrice() {
-        return someArmor.getPrice();
-    }
-
-    public int getLeggingsPrice() {
-        return someLeggings.getPrice();
-    }
-
     @Override
     public List<Item> setStoreListData() {
         return this.storeList;
+    }
+
+    @Override
+    public String getFirstItemName() {
+        return someHelmet.getName();
+    }
+
+    @Override
+    public String getSecondItemName() {
+        return someArmor.getName();
+    }
+
+    @Override
+    public String getThirdItemName() {
+        return someLeggings.getName();
+    }
+
+    @Override
+    public Integer getFirstItemPrice() {
+        return someHelmet.getPrice();
+    }
+
+    @Override
+    public Integer getSecondItemPrice() {
+        return someArmor.getPrice();
+    }
+
+    @Override
+    public Integer getThirdItemPrice() {
+        return someLeggings.getPrice();
     }
 }

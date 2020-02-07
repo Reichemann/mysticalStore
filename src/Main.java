@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.util.List;
 import java.util.ArrayList;
 
+import Stores.Store;
 import Stores.ArmorStore;
 import Stores.MagicStore;
 import Stores.WeaponStore;
@@ -41,16 +42,16 @@ public class Main {
 
         switch(userMainChoice) {
             case 1:
-                armorStoreData();
+                someStoreData(someArmorStore);
                 break;
             case 2:
-                magicStoreData();
+                someStoreData(someMagicStore);
                 break;
             case 3:
-                weaponStoreData();
+                someStoreData(someWeaponStore);
                 break;
             case 4:
-                alchemyStoreData();
+                someStoreData(someAlchemyStore);
                 break;
             case 5:
                 showTotalPurchasePrice(getTotalPurchasePrice(totalPurchasePrice));
@@ -64,103 +65,25 @@ public class Main {
         }
     }
 
-    public static void armorStoreData() {
-        System.out.println("1. Steel Helmet.");
-        System.out.println("2. Steel Armor.");
-        System.out.println("3. Steel Leggings.");
-
-        int armorStoreChoice = in.nextInt();
-
-        switch(armorStoreChoice) {
-            case 1:
-                purchaseMessage();
-                addPurchaseToPriceList(someArmorStore.getHelmetPrice());
-                break;
-            case 2:
-                purchaseMessage();
-                addPurchaseToPriceList(someArmorStore.getArmorPrice());
-                break;
-            case 3:
-                purchaseMessage();
-                addPurchaseToPriceList(someArmorStore.getLeggingsPrice());
-                break;
-            default:
-                errorMessage();
-                break;
-        }
-    }
-
-    public static void magicStoreData() {
-        System.out.println("1. Arcane staff.");
-        System.out.println("2. Mystical amulet.");
-        System.out.println("3. Magic powder.");
-
-        int magicStoreChoice = in.nextInt();
-
-        switch(magicStoreChoice) {
-            case 1:
-                purchaseMessage();
-                addPurchaseToPriceList(someMagicStore.getStaffPrice());
-                break;
-            case 2:
-                purchaseMessage();
-                addPurchaseToPriceList(someMagicStore.getAmuletPrice());
-                break;
-            case 3:
-                purchaseMessage();
-                addPurchaseToPriceList(someMagicStore.getPowderPrice());
-                break;
-            default:
-                errorMessage();
-                break;
-        }
-    }
-
-    public static void weaponStoreData() {
-        System.out.println("1. Powerful crossbow.");
-        System.out.println("2. Steel sword.");
-        System.out.println("3. Mithril axe.");
-
-        int weaponStoreChoice = in.nextInt();
-
-        switch(weaponStoreChoice) {
-            case 1:
-                purchaseMessage();
-                addPurchaseToPriceList(someWeaponStore.getCrossbowPrice());
-                break;
-            case 2:
-                purchaseMessage();
-                addPurchaseToPriceList(someWeaponStore.getSwordPrice());
-                break;
-            case 3:
-                purchaseMessage();
-                addPurchaseToPriceList(someWeaponStore.getAxePrice());
-                break;
-            default:
-                errorMessage();
-                break;
-        }
-    }
-
-    public static void alchemyStoreData() {
-        System.out.println("1. Health potion.");
-        System.out.println("2. Mana potion.");
-        System.out.println("3. Power potion.");
+    public static void someStoreData(Store someStore) {
+        System.out.println("1. " + someStore.getFirstItemName());
+        System.out.println("2. " + someStore.getSecondItemName());
+        System.out.println("3. " + someStore.getThirdItemName());
 
         int alchemyStoreChoice = in.nextInt();
 
         switch(alchemyStoreChoice) {
             case 1:
                 purchaseMessage();
-                addPurchaseToPriceList(someAlchemyStore.getHealthPotionPrice());
+                addPurchaseToPriceList(someStore.getFirstItemPrice());
                 break;
             case 2:
                 purchaseMessage();
-                addPurchaseToPriceList(someAlchemyStore.getManaPotionPrice());
+                addPurchaseToPriceList(someStore.getSecondItemPrice());
                 break;
             case 3:
                 purchaseMessage();
-                addPurchaseToPriceList(someAlchemyStore.getPowerPotionPrice());
+                addPurchaseToPriceList(someStore.getThirdItemPrice());
                 break;
             default:
                 errorMessage();

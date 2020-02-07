@@ -25,20 +25,38 @@ public class WeaponStore extends Store {
         storeList.add(someAxe);
     }
 
-    public int getCrossbowPrice() {
-        return someCrossbow.getPrice();
-    }
-
-    public int getSwordPrice() {
-        return someSword.getPrice();
-    }
-
-    public int getAxePrice() {
-        return someAxe.getPrice();
+    @Override
+    protected List<Item> setStoreListData() {
+        return this.storeList;
     }
 
     @Override
-    public List<Item> setStoreListData() {
-        return this.storeList;
+    public String getFirstItemName() {
+        return someCrossbow.getName();
+    }
+
+    @Override
+    public String getSecondItemName() {
+        return someSword.getName();
+    }
+
+    @Override
+    public String getThirdItemName() {
+        return someAxe.getName();
+    }
+
+    @Override
+    public Integer getFirstItemPrice() {
+        return someCrossbow.getPrice();
+    }
+
+    @Override
+    public Integer getSecondItemPrice() {
+        return someSword.getPrice();
+    }
+
+    @Override
+    public Integer getThirdItemPrice() {
+        return someAxe.getPrice();
     }
 }

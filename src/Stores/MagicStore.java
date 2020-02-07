@@ -25,20 +25,38 @@ public class MagicStore extends Store {
         storeList.add(somePowder);
     }
 
-    public int getStaffPrice() {
-        return someStaff.getPrice();
-    }
-
-    public int getAmuletPrice() {
-        return someAmulet.getPrice();
-    }
-
-    public int getPowderPrice() {
-        return somePowder.getPrice();
+    @Override
+    protected List<Item> setStoreListData() {
+        return this.storeList;
     }
 
     @Override
-    public List<Item> setStoreListData() {
-        return this.storeList;
+    public String getFirstItemName() {
+        return someStaff.getName();
+    }
+
+    @Override
+    public String getSecondItemName() {
+        return someAmulet.getName();
+    }
+
+    @Override
+    public String getThirdItemName() {
+        return somePowder.getName();
+    }
+
+    @Override
+    public Integer getFirstItemPrice() {
+        return someStaff.getPrice();
+    }
+
+    @Override
+    public Integer getSecondItemPrice() {
+        return someAmulet.getPrice();
+    }
+
+    @Override
+    public Integer getThirdItemPrice() {
+        return somePowder.getPrice();
     }
 }

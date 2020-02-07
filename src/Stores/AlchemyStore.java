@@ -25,20 +25,38 @@ public class AlchemyStore extends Store {
         storeList.add(somePowerPotion);
     }
 
-    public int getHealthPotionPrice() {
+    @Override
+    protected List<Item> setStoreListData() {
+        return this.storeList;
+    }
+
+    @Override
+    public Integer getFirstItemPrice() {
         return someHealthPotion.getPrice();
     }
 
-    public int getManaPotionPrice() {
+    @Override
+    public Integer getSecondItemPrice() {
         return someManaPotion.getPrice();
     }
 
-    public int getPowerPotionPrice() {
+    @Override
+    public Integer getThirdItemPrice() {
         return somePowerPotion.getPrice();
     }
 
     @Override
-    public List<Item> setStoreListData() {
-        return this.storeList;
+    public String getFirstItemName() {
+        return someHealthPotion.getName();
+    }
+
+    @Override
+    public String getSecondItemName() {
+        return someManaPotion.getName();
+    }
+
+    @Override
+    public String getThirdItemName() {
+        return somePowerPotion.getName();
     }
 }
