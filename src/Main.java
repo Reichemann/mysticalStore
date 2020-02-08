@@ -66,19 +66,20 @@ public class Main {
     }
 
     public static void someStoreData(Store someStore) {
-        System.out.println("1. " + someStore.setStoreListData().get(0).getName());
-        System.out.println("2. " + someStore.setStoreListData().get(1).getName());
-        System.out.println("3. " + someStore.setStoreListData().get(2).getName());
+
+        for(int i = 0; i < someStore.setStoreListData().size(); ++i) {
+            System.out.println((i + 1) + ". " + someStore.setStoreListData().get(i).getName());
+        }
 
         int someStoreChoice = in.nextInt();
 
-        if(someStoreChoice < 0 || someStoreChoice >= someStore.setStoreListData().size()) {
+        if(someStoreChoice < 0 || someStoreChoice > someStore.setStoreListData().size()) {
             errorMessage();
         }
 
         else {
             purchaseMessage();
-            addPurchaseToPriceList(someStore.setStoreListData().get(someStoreChoice).getPrice());
+            addPurchaseToPriceList(someStore.setStoreListData().get(someStoreChoice - 1).getPrice());
         }
     }
 
