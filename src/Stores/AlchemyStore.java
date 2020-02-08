@@ -13,7 +13,7 @@ public class AlchemyStore extends Store {
     private ManaPotion someManaPotion;
     private PowerPotion somePowerPotion;
 
-    private List <Item> storeList = new ArrayList();
+    private List <Item> storeList = new ArrayList<>();
 
     public AlchemyStore() {
         someHealthPotion = new HealthPotion();
@@ -26,37 +26,7 @@ public class AlchemyStore extends Store {
     }
 
     @Override
-    protected List<Item> setStoreListData() {
+    public List<Item> setStoreListData() {
         return this.storeList;
-    }
-
-    @Override
-    public Integer getFirstItemPrice() {
-        return someHealthPotion.getPrice();
-    }
-
-    @Override
-    public Integer getSecondItemPrice() {
-        return someManaPotion.getPrice();
-    }
-
-    @Override
-    public Integer getThirdItemPrice() {
-        return somePowerPotion.getPrice();
-    }
-
-    @Override
-    public String getFirstItemName() {
-        return someHealthPotion.getName();
-    }
-
-    @Override
-    public String getSecondItemName() {
-        return someManaPotion.getName();
-    }
-
-    @Override
-    public String getThirdItemName() {
-        return somePowerPotion.getName();
     }
 }

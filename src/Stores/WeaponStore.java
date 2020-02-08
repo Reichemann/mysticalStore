@@ -13,7 +13,7 @@ public class WeaponStore extends Store {
     private Sword someSword;
     private Axe someAxe;
 
-    private List <Item> storeList = new ArrayList();
+    private List <Item> storeList = new ArrayList<>();
 
     public WeaponStore() {
         someCrossbow = new Crossbow();
@@ -26,37 +26,7 @@ public class WeaponStore extends Store {
     }
 
     @Override
-    protected List<Item> setStoreListData() {
+    public List<Item> setStoreListData() {
         return this.storeList;
-    }
-
-    @Override
-    public String getFirstItemName() {
-        return someCrossbow.getName();
-    }
-
-    @Override
-    public String getSecondItemName() {
-        return someSword.getName();
-    }
-
-    @Override
-    public String getThirdItemName() {
-        return someAxe.getName();
-    }
-
-    @Override
-    public Integer getFirstItemPrice() {
-        return someCrossbow.getPrice();
-    }
-
-    @Override
-    public Integer getSecondItemPrice() {
-        return someSword.getPrice();
-    }
-
-    @Override
-    public Integer getThirdItemPrice() {
-        return someAxe.getPrice();
     }
 }

@@ -66,28 +66,19 @@ public class Main {
     }
 
     public static void someStoreData(Store someStore) {
-        System.out.println("1. " + someStore.getFirstItemName());
-        System.out.println("2. " + someStore.getSecondItemName());
-        System.out.println("3. " + someStore.getThirdItemName());
+        System.out.println("1. " + someStore.setStoreListData().get(0).getName());
+        System.out.println("2. " + someStore.setStoreListData().get(1).getName());
+        System.out.println("3. " + someStore.setStoreListData().get(2).getName());
 
-        int alchemyStoreChoice = in.nextInt();
+        int someStoreChoice = in.nextInt();
 
-        switch(alchemyStoreChoice) {
-            case 1:
-                purchaseMessage();
-                addPurchaseToPriceList(someStore.getFirstItemPrice());
-                break;
-            case 2:
-                purchaseMessage();
-                addPurchaseToPriceList(someStore.getSecondItemPrice());
-                break;
-            case 3:
-                purchaseMessage();
-                addPurchaseToPriceList(someStore.getThirdItemPrice());
-                break;
-            default:
-                errorMessage();
-                break;
+        if(someStoreChoice < 0 || someStoreChoice >= someStore.setStoreListData().size()) {
+            errorMessage();
+        }
+
+        else {
+            purchaseMessage();
+            addPurchaseToPriceList(someStore.setStoreListData().get(someStoreChoice).getPrice());
         }
     }
 

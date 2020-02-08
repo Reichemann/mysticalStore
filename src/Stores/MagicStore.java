@@ -13,7 +13,7 @@ public class MagicStore extends Store {
     private Amulet someAmulet;
     private Powder somePowder;
 
-    private List <Item> storeList = new ArrayList();
+    private List <Item> storeList = new ArrayList<>();
 
     public MagicStore() {
         someStaff = new Staff();
@@ -26,37 +26,7 @@ public class MagicStore extends Store {
     }
 
     @Override
-    protected List<Item> setStoreListData() {
+    public List<Item> setStoreListData() {
         return this.storeList;
-    }
-
-    @Override
-    public String getFirstItemName() {
-        return someStaff.getName();
-    }
-
-    @Override
-    public String getSecondItemName() {
-        return someAmulet.getName();
-    }
-
-    @Override
-    public String getThirdItemName() {
-        return somePowder.getName();
-    }
-
-    @Override
-    public Integer getFirstItemPrice() {
-        return someStaff.getPrice();
-    }
-
-    @Override
-    public Integer getSecondItemPrice() {
-        return someAmulet.getPrice();
-    }
-
-    @Override
-    public Integer getThirdItemPrice() {
-        return somePowder.getPrice();
     }
 }
