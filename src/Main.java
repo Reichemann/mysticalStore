@@ -1,7 +1,6 @@
 import java.util.Scanner;
 import java.util.List;
 import java.util.ArrayList;
-
 import Stores.Store;
 import Stores.ArmorStore;
 import Stores.MagicStore;
@@ -15,7 +14,7 @@ public class Main {
     static WeaponStore someWeaponStore = new WeaponStore();
     static AlchemyStore someAlchemyStore = new AlchemyStore();
 
-    static List <Integer> priceList = new ArrayList<>();
+    static List<Integer> priceList = new ArrayList<>();
     static int totalPurchasePrice = 0;
     static boolean play = true;
 
