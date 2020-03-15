@@ -13,7 +13,7 @@ public class WeaponStore extends Store {
     private Sword someSword;
     private Axe someAxe;
 
-    private List <Item> storeList = new ArrayList<>();
+    private List<Item> storeList = new ArrayList<>();
 
     public WeaponStore() {
         someCrossbow = new Crossbow();
