@@ -13,7 +13,7 @@ public class MagicStore extends Store {
     private Amulet someAmulet;
     private Powder somePowder;
 
-    private List <Item> storeList = new ArrayList<>();
+    private List<Item> storeList = new ArrayList<>();
 
     public MagicStore() {
         someStaff = new Staff();
