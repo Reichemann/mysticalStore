@@ -13,7 +13,7 @@ public class AlchemyStore extends Store {
     private ManaPotion someManaPotion;
     private PowerPotion somePowerPotion;
 
-    private List <Item> storeList = new ArrayList<>();
+    private List<Item> storeList = new ArrayList<>();
 
     public AlchemyStore() {
         someHealthPotion = new HealthPotion();
