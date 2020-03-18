@@ -21,12 +21,9 @@ public class Main {
     static Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) {
-
         System.out.println("Welcome to the great shopping! Choose an option: ");
-
-        while(play) {
+        while(play)
             printMainData();
-        }
     }
 
     public static void printMainData() {
@@ -65,33 +62,25 @@ public class Main {
     }
 
     public static void someStoreData(Store someStore) {
-
-        for(int i = 0; i < someStore.setStoreListData().size(); ++i) {
+        for(int i = 0; i < someStore.setStoreListData().size(); ++i)
             System.out.println((i + 1) + ". " + someStore.setStoreListData().get(i).getName());
-        }
 
         int someStoreChoice = in.nextInt();
 
-        if(someStoreChoice < 0 || someStoreChoice > someStore.setStoreListData().size()) {
+        if(someStoreChoice < 0 || someStoreChoice > someStore.setStoreListData().size())
             errorMessage();
-        }
-
         else {
             purchaseMessage();
             addPurchaseToPriceList(someStore.setStoreListData().get(someStoreChoice - 1).getPrice());
         }
     }
 
-    public static void addPurchaseToPriceList(int price) {
+    public static void addPurchaseToPriceList(int price)
         priceList.add(price);
-    }
 
     public static int getTotalPurchasePrice(int totalPurchasePrice) {
-
-        for(int object : priceList) {
+        for(int object : priceList)
             totalPurchasePrice += object;
-        }
-
         return totalPurchasePrice;
     }
 
