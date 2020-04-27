@@ -1,4 +1,4 @@
-# mysticalStore
+# MysticalStore
 
 <h2>Description:</h2>
 
