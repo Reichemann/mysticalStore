@@ -1,32 +1,32 @@
-import java.util.Scanner;
-import java.util.List;
-import java.util.ArrayList;
-import Stores.Store;
-import Stores.ArmorStore;
-import Stores.MagicStore;
-import Stores.WeaponStore;
-import Stores.AlchemyStore;
+package app;
+
+import java.util.*;
+
+import app.model.store.*;
 
 public class Main {
 
-    static ArmorStore someArmorStore = new ArmorStore();
-    static MagicStore someMagicStore = new MagicStore();
-    static WeaponStore someWeaponStore = new WeaponStore();
-    static AlchemyStore someAlchemyStore = new AlchemyStore();
+    private static final Scanner in = new Scanner(System.in);
 
-    static List<Integer> priceList = new ArrayList<>();
-    static int totalPurchasePrice = 0;
-    static boolean play = true;
+    private static final List<Integer> priceList = new ArrayList<>();
 
-    static Scanner in = new Scanner(System.in);
+    private static final ArmorStore someArmorStore = new ArmorStore();
+    private static final MagicStore someMagicStore = new MagicStore();
+    private static final WeaponStore someWeaponStore = new WeaponStore();
+    private static final AlchemyStore someAlchemyStore = new AlchemyStore();
+
+    private static boolean play = true;
 
     public static void main(String[] args) {
+
         System.out.println("Welcome to the great shopping! Choose an option: ");
-        while(play)
+
+        while (play)
             printMainData();
     }
 
-    public static void printMainData() {
+    private static void printMainData() {
+
         System.out.println("1. Armor Store.");
         System.out.println("2. Magic Store.");
         System.out.println("3. Weapon Store.");
@@ -36,7 +36,10 @@ public class Main {
 
         int userMainChoice = in.nextInt();
 
-        switch(userMainChoice) {
+        int totalPurchasePrice = 0;
+
+        switch (userMainChoice) {
+
             case 1:
                 someStoreData(someArmorStore);
                 break;
@@ -61,13 +64,14 @@ public class Main {
         }
     }
 
-    public static void someStoreData(Store someStore) {
-        for(int i = 0; i < someStore.setStoreListData().size(); ++i)
+    private static void someStoreData(Store someStore) {
+
+        for (int i = 0; i < someStore.setStoreListData().size(); ++i)
             System.out.println((i + 1) + ". " + someStore.setStoreListData().get(i).getName());
 
         int someStoreChoice = in.nextInt();
 
-        if(someStoreChoice < 0 || someStoreChoice > someStore.setStoreListData().size())
+        if (someStoreChoice < 0 || someStoreChoice > someStore.setStoreListData().size())
             errorMessage();
         else {
             purchaseMessage();
@@ -75,32 +79,36 @@ public class Main {
         }
     }
 
-    public static void addPurchaseToPriceList(int price)
+    private static void addPurchaseToPriceList(int price) {
         priceList.add(price);
+    }
 
-    public static int getTotalPurchasePrice(int totalPurchasePrice) {
-        for(int object : priceList)
+    private static int getTotalPurchasePrice(int totalPurchasePrice) {
+
+        for (int object : priceList)
             totalPurchasePrice += object;
+
         return totalPurchasePrice;
     }
 
-    public static void showTotalPurchasePrice(int totalPurchasePrice) {
-        if(totalPurchasePrice != 0)
+    private static void showTotalPurchasePrice(int totalPurchasePrice) {
+
+        if (totalPurchasePrice != 0)
             System.out.println("Total purchase price: " + totalPurchasePrice);
         else
             System.out.println("Buy something, you`ll not regret it!");
     }
 
-    public static boolean programEnd() {
+    private static boolean programEnd() {
         System.out.println("Good luck!");
         return false;
     }
 
-    public static void purchaseMessage() {
+    private static void purchaseMessage() {
         System.out.println("Purchase completed!");
     }
 
-    public static void errorMessage() {
+    private static void errorMessage() {
         System.out.println("Incorrect input!");
     }
 }
