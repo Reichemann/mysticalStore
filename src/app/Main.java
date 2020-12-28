@@ -17,7 +17,11 @@ public class Main {
 
     private static boolean play = true;
 
-    public static void main(String[] args) {
+    public static void main(String... args) {
+        new Main().execute();
+    }
+
+    private void execute() {
 
         System.out.println("Welcome to the great shopping! Choose an option: ");
 
@@ -25,7 +29,7 @@ public class Main {
             printMainData();
     }
 
-    private static void printMainData() {
+    private void printMainData() {
 
         System.out.println("1. Armor Store.");
         System.out.println("2. Magic Store.");
@@ -64,7 +68,7 @@ public class Main {
         }
     }
 
-    private static void someStoreData(Store someStore) {
+    private void someStoreData(Store someStore) {
 
         for (int i = 0; i < someStore.setStoreListData().size(); ++i)
             System.out.println((i + 1) + ". " + someStore.setStoreListData().get(i).getName());
@@ -79,11 +83,11 @@ public class Main {
         }
     }
 
-    private static void addPurchaseToPriceList(int price) {
+    private void addPurchaseToPriceList(int price) {
         priceList.add(price);
     }
 
-    private static int getTotalPurchasePrice(int totalPurchasePrice) {
+    private int getTotalPurchasePrice(int totalPurchasePrice) {
 
         for (int object : priceList)
             totalPurchasePrice += object;
@@ -91,7 +95,7 @@ public class Main {
         return totalPurchasePrice;
     }
 
-    private static void showTotalPurchasePrice(int totalPurchasePrice) {
+    private void showTotalPurchasePrice(int totalPurchasePrice) {
 
         if (totalPurchasePrice != 0)
             System.out.println("Total purchase price: " + totalPurchasePrice);
@@ -99,16 +103,16 @@ public class Main {
             System.out.println("Buy something, you`ll not regret it!");
     }
 
-    private static boolean programEnd() {
+    private boolean programEnd() {
         System.out.println("Good luck!");
         return false;
     }
 
-    private static void purchaseMessage() {
+    private void purchaseMessage() {
         System.out.println("Purchase completed!");
     }
 
-    private static void errorMessage() {
+    private void errorMessage() {
         System.out.println("Incorrect input!");
     }
 }
